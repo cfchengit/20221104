@@ -98,7 +98,7 @@ function draw() {
   push()
     textSize(50)
     fill(255,0,0)  
-    text(result,1000,50);   
+    text(result,1100,100);   
   pop()
   // textSize(40)
   // text("X:"+m_x+"  Y:"+m_y,50,50)
