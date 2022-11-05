@@ -6,6 +6,7 @@ var m_x,m_y
 var music_btn,mouse_btn,Speech_btn
 var mosueIsplay=true
 var myRec = new p5.SpeechRec();
+var result
 function preload(){
   song = loadSound("When You're Not Looking - Nathan Moore.mp3");
 }
@@ -71,10 +72,14 @@ function showResult()
 			// background(192, 255, 192);
 			// text(myRec.resultString, width/2, height/2);
       push()
-      fill(255,0,0)
-      textStyle("italic")
-			text(1000,150,myRec.resultString);
+        translate(0,0)
+        background(192, 255, 192);
+        fill(255,0,0)
+        textStyle("italic")
+        text(myRec.resultString,1200,10);
+        text(myRec.resultString,0, height/2);
       pop()
+      result = myRec.resultString
       if(myRec.resultString==="跳舞")
       {
         music_btn_pressed()
@@ -90,6 +95,11 @@ function showResult()
 
 function draw() {
   background("#E2EAFC");
+  push()
+    textSize(50)
+    fill(255,0,0)  
+    text(result,1200,50);   
+  pop()
   // textSize(40)
   // text("X:"+m_x+"  Y:"+m_y,50,50)
   if(songIsplay){
